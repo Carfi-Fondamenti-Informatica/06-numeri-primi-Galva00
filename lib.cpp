@@ -1,12 +1,13 @@
-
 #include "lib.h"
 
-int primi (int n) {
-  int i;
-  int divisore=0;
-  for (i=1; i<=n; i++)
-    if (n%i==0) {
-      divisore++;
+bool primo(int n, int i){
+    if(n % i == 0){
+        if(n == i){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-  return divisore;
+    primo(n, i + 1);
 }
